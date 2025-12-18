@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YASU</title>
+    <meta
+      name="description"
+      content="Enter the universe of Yas - A premium sci-fi portfolio experience."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- TEXT ANIMATION -->
+
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Three.js (Global/UMD Version for File Protocol Support) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  </head>
+
+  <body>
+    <!-- ENTRY SECTION -->
+    <section id="entry-screen">
+      <div class="entry-content">
+        <h1 class="fade-in">ENTER IN YAS UNIVERS</h1>
+        <button id="enter-btn" class="sci-fi-btn fade-in-delay">
+          INITIALIZE
+        </button>
+      </div>
+    </section>
+
+    <!-- 3D BACKGROUND CONTAINER -->
+    <div id="universe-container"></div>
+
+    <!-- MAIN UI LAYER (Hidden initially) -->
+    <main id="main-interface" class="hidden">
+      <!-- Navbar -->
+      <nav class="top-nav">
+        <div class="logo">YAS</div>
+        <ul class="nav-links">
+          <li data-target="home" class="active">HOME</li>
+          <li data-target="about">ABOUT</li>
+          <li data-target="projects">PROJECTS</li>
+          <li data-target="skills">SKILLS</li>
+          <li data-target="contact">CONTACT</li>
+        </ul>
+      </nav>
+
+      <!-- Social Sidebar -->
+      <aside class="social-bar">
+        <a
+          href="https://www.facebook.com/profile.php?id=61584528483604"
+          target="_blank"
+          class="social-link"
+          >FB</a
+        >
+        <a
+          href="https://www.instagram.com/yasirpahadi?igsh=MXNvMG5mbG5tNzZrcw=="
+          target="_blank"
+          class="social-link"
+          >IN</a
+        >
+        <a href="#" target="_blank" class="social-link">IG</a>
+      </aside>
+
+      <!-- DYNAMIC CONTENT OVERLAY -->
+      <div id="content-overlay">
+        <!-- Home/Hero Content -->
+        <div id="home-content" class="content-section active">
+          <h2>
+            WELCOME TO <br />
+            <span class="highlight">YAS <span class="unicolor">UNIVERS</span></span>
+          </h2>
+          <!-- EXPLORE THE DIGITAL FRONTIER -->
+          <p id="typed-text"></p>
+        </div>
+
+        <!-- Skills Panel (Slide-in) -->
+        <div id="skills-panel" class="glass-panel right-panel">
+          <h3>MODULES // SKILLS</h3>
+          <ul class="skill-list">
+            <li data-skill="WEB">WEB DEVELOPMENT</li>
+            <li data-skill="AI">ARTIFICIAL INTELLIGENCE</li>
+            <li data-skill="APP">APP DEVELOPMENT</li>
+            <li data-skill="ML">MACHINE LEARNING</li>
+            <li data-skill="3D">3D DESIGN</li>
+            <li data-skill="VIDEO">VIDEO PRODUCTION</li>
+          </ul>
+        </div>
+
+        <!-- About Section (Content Card) -->
+        <div id="about-section" class="content-section center-card hidden">
+          <h3>FILE: ABOUT_YAS</h3>
+          <p>A creative developer traversing the digital cosmos.</p>
+          <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem">
+            Specializing in immersive web experiences, AI agents, and futuristic
+            interfaces. Building the bridge between imagination and code.
+          </p>
+          <button class="close-btn sci-fi-btn small">CLOSE</button>
+        </div>
+
+        <!-- Projects Section (Content Card) -->
+        <div id="projects-section" class="content-section center-card hidden">
+          <h3>PROJECT DATABASE</h3>
+          <div class="project-grid">
+            <div class="project-card">
+              <div class="p-icon"></div>
+              <h4>NEURAL NETWORK UI</h4>
+              <p>AI-driven interface visualization.</p>
+            </div>
+            <div class="project-card">
+              <div class="p-icon"></div>
+              <h4>QUANTUM APP</h4>
+              <p>Next-gen financial modeling tool.</p>
+            </div>
+            <div class="project-card">
+              <div class="p-icon"></div>
+              <h4>CYBER MARKET</h4>
+              <p>Decentralized trading platform.</p>
+            </div>
+            <div class="project-card">
+              <div class="p-icon"></div>
+              <h4>VOID ENGINE</h4>
+              <p>Web-based 3D game engine.</p>
+            </div>
+          </div>
+          <button class="close-btn sci-fi-btn small">CLOSE TERMINAL</button>
+        </div>
+
+        <!-- VIDEO SKILL SECTION (NEW) -->
+        <div id="video-section" class="content-section center-card hidden">
+          <h3>VISUAL ARCHIVES // VIDEO</h3>
+          <p>
+            Cinematic storytelling through digital lenses. Editing, Color
+            Grading, and VFX.
+          </p>
+
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <div class="g-placeholder color-1"></div>
+              <span>REEL_2024</span>
+            </div>
+            <div class="gallery-item">
+              <div class="g-placeholder color-2"></div>
+              <span>NEON_CITY</span>
+            </div>
+            <div class="gallery-item">
+              <div class="g-placeholder color-3"></div>
+              <span>CYBER_ADS</span>
+            </div>
+            <div class="gallery-item">
+              <div class="g-placeholder color-4"></div>
+              <span>VFX_BREAKDOWN</span>
+            </div>
+          </div>
+
+          <button class="close-btn sci-fi-btn small">CLOSE ARCHIVE</button>
+        </div>
+
+        <!-- Contact Section (Content Card) -->
+        <div id="contact-section" class="content-section center-card hidden">
+          <h3>TRANSMISSION LINK</h3>
+          <form>
+            <input type="text" placeholder="IDENTITY" required />
+            <input type="email" placeholder="FREQUENCY (EMAIL)" required />
+            <textarea placeholder="MESSAGE DATA" rows="4"></textarea>
+            <button type="submit" class="sci-fi-btn">SEND TRANSMISSION</button>
+          </form>
+          <button class="close-btn sci-fi-btn small">CLOSE LINK</button>
+        </div>
+      </div>
+    </main>
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+</script>
+  </body>
+</html>
